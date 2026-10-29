@@ -1,0 +1,203 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-off-white);
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.searchIcon {
+  color: var(--color-grey);
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-off-white);
+  outline: none;
+  min-width: 250px;
+}
+
+.tableCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.85rem;
+}
+
+.rowClickable {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.rowClickable:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.nameWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-green-accent);
+}
+
+.custName {
+  color: var(--color-off-white);
+  font-weight: 500;
+}
+
+.monoCell {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-grey);
+  white-space: nowrap;
+}
+
+.adminPill {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(109, 184, 138, 0.1);
+  border: 1px solid rgba(109, 184, 138, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-green-accent);
+}
+
+.userPill {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-off-white);
+}
+
+.qtyCell {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-off-white);
+}
+
+.drawerRow td {
+  background: #090909;
+  padding: 2rem;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-green-accent);
+  letter-spacing: 0.1em;
+}
+
+.ordersList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.orderListTitle {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.noOrders {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.orderSnippet {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.orderId {
+  color: var(--color-green-accent);
+}
+
+.orderProd {
+  color: var(--color-off-white);
+}
+
+.orderStat {
+  color: var(--color-grey);
+}

@@ -1,0 +1,62 @@
+:root {
+  /* Colors */
+  --color-black: #0a0a0a;
+  --color-off-black: #111111;
+  --color-charcoal: #1a1a1a;
+  --color-dark: #222222;
+  --color-mid: #444444;
+  --color-grey: #888888;
+  --color-light-grey: #bbbbbb;
+  --color-off-white: #f0ede8;
+  --color-white: #fafaf7;
+  --color-green: #2d5a3d;
+  --color-green-light: #4a8c60;
+  --color-green-accent: #6db88a;
+  --color-green-glow: rgba(109, 184, 138, 0.15);
+  --color-red-alert: #c0392b;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'DM Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Border */
+  --border: 1px solid rgba(255,255,255,0.08);
+  --border-light: 1px solid rgba(255,255,255,0.04);
+  --border-green: 1px solid rgba(109, 184, 138, 0.3);
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Z-index layers */
+  --z-grain: 9999;
+  --z-cursor: 9998;
+  --z-nav: 1000;
+  --z-modal: 900;
+  --z-overlay: 800;
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Typography scale */
+  --text-hero: clamp(4rem, 12vw, 12rem);
+  --text-section: clamp(3rem, 8vw, 9rem);
+  --text-large: clamp(2rem, 5vw, 5rem);
+  --text-xl: clamp(1.5rem, 3vw, 3rem);
+  --text-lg: clamp(1.125rem, 2vw, 1.5rem);
+  --text-body: clamp(1rem, 1.5vw, 1.25rem);
+  --text-sm: 0.875rem;
+  --text-xs: 0.75rem;
+}

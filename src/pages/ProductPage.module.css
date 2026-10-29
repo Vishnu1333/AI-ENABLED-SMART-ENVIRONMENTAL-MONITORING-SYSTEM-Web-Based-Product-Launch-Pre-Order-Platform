@@ -1,0 +1,577 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-black);
+  padding: 8rem 2rem 6rem;
+  overflow: hidden;
+}
+
+.techGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  flex-wrap: wrap;
+}
+
+.breadLink {
+  color: var(--color-grey);
+  transition: color 0.2s ease;
+}
+
+.breadLink:hover {
+  color: var(--color-off-white);
+}
+
+.breadDivider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.breadActive {
+  color: var(--color-off-white);
+}
+
+.breadCode {
+  color: var(--color-green-accent);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.5rem;
+}
+
+@media (min-width: 1024px) {
+  .productGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+  }
+}
+
+.visualCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.deviceEnclosure {
+  position: relative;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.5rem;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+.enclosureCornerTL,
+.enclosureCornerTR,
+.enclosureCornerBL,
+.enclosureCornerBR {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+}
+
+.enclosureCornerTL {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid var(--color-green-accent);
+  border-left: 2px solid var(--color-green-accent);
+}
+
+.enclosureCornerTR {
+  top: 10px;
+  right: 10px;
+  border-top: 2px solid var(--color-green-accent);
+  border-right: 2px solid var(--color-green-accent);
+}
+
+.enclosureCornerBL {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 2px solid var(--color-green-accent);
+  border-left: 2px solid var(--color-green-accent);
+}
+
+.enclosureCornerBR {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid var(--color-green-accent);
+  border-right: 2px solid var(--color-green-accent);
+}
+
+.deviceMetaTop {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.metaLive {
+  color: var(--color-green-accent);
+}
+
+.deviceGraphic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+.chassis {
+  width: 280px;
+  height: 380px;
+  background: linear-gradient(135deg, #1c1c1c 0%, #0e0e0e 50%, #181818 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 30px 60px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(109, 184, 138, 0.05);
+  position: relative;
+}
+
+.laserAperture {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #090909;
+  border: 1px solid rgba(109, 184, 138, 0.4);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apertureRing {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px dashed rgba(109, 184, 138, 0.6);
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.laserPulse {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+  box-shadow: 0 0 12px var(--color-green-accent);
+}
+
+.deviceDisplayPanel {
+  background: #090909;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+}
+
+.panelRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panelKey {
+  color: var(--color-grey);
+}
+
+.panelVal {
+  color: var(--color-off-white);
+}
+
+.panelValGreen {
+  color: var(--color-green-accent);
+  font-weight: 600;
+}
+
+.grilleVents {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ventLine {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1px;
+}
+
+.deviceBrandLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.callout {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--color-green-accent);
+  background: rgba(10, 10, 10, 0.85);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(109, 184, 138, 0.3);
+}
+
+.calloutTop {
+  top: 15%;
+  left: 0;
+}
+
+.calloutRight {
+  top: 45%;
+  right: 0;
+}
+
+.calloutBottom {
+  bottom: 15%;
+  left: 10%;
+}
+
+.calloutDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.deviceFooterMeta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-grey);
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeRow {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.batchBadge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  padding: 0.25rem 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-off-white);
+}
+
+.statusBadge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  padding: 0.25rem 0.65rem;
+  background: rgba(109, 184, 138, 0.1);
+  border: 1px solid rgba(109, 184, 138, 0.3);
+  color: var(--color-green-accent);
+}
+
+.productTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-off-white);
+  margin-bottom: 1rem;
+}
+
+.productTagline {
+  font-size: 1.15rem;
+  color: var(--color-grey);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.pricingBanner {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 2px solid var(--color-green-accent);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.priceWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.priceLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.priceAmount {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  color: var(--color-green-accent);
+  font-weight: 600;
+}
+
+.pricingNote {
+  font-size: 0.8rem;
+  color: var(--color-grey);
+  line-height: 1.4;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-grey);
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.actionSection {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.qtyWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.qtyLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+}
+
+.qtyBtn {
+  padding: 0.8rem 1rem;
+  color: var(--color-off-white);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qtyBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-green-accent);
+}
+
+.qtyValue {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  min-width: 40px;
+  text-align: center;
+  color: var(--color-off-white);
+}
+
+.preOrderBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.15rem 2rem;
+  background: var(--color-off-white);
+  color: var(--color-black);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 260px;
+}
+
+.preOrderBtn:hover {
+  background: var(--color-green-accent);
+  box-shadow: 0 10px 25px rgba(109, 184, 138, 0.3);
+}
+
+.specTabs {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+}
+
+.tabHeaders {
+  display: flex;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2rem;
+}
+
+.tabBtn {
+  padding-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tabBtn:hover {
+  color: var(--color-off-white);
+}
+
+.tabActive {
+  color: var(--color-green-accent);
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-green-accent);
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  .specsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.specLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.specVal {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-off-white);
+}
+
+.featuresList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-grey);
+  line-height: 1.5;
+}
+
+.featIcon {
+  color: var(--color-green-accent);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 6rem 1.5rem 4rem;
+  }
+  .deviceEnclosure {
+    padding: 2rem 1.5rem;
+    min-height: 480px;
+  }
+  .chassis {
+    width: 220px;
+    height: 320px;
+  }
+  .callout {
+    display: none;
+  }
+  .preOrderBtn {
+    width: 100%;
+  }
+}

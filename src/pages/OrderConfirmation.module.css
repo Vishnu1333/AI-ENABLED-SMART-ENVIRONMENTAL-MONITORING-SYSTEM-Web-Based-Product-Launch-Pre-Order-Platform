@@ -1,0 +1,283 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-black);
+  padding: 8rem 2rem 6rem;
+  overflow: hidden;
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.heroBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.checkRing {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(109, 184, 138, 0.08);
+  border: 1px solid rgba(109, 184, 138, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 35px rgba(109, 184, 138, 0.2);
+}
+
+.checkIcon {
+  color: var(--color-green-accent);
+}
+
+.tagWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--color-green-accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-off-white);
+  margin-bottom: 1.5rem;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--color-green-accent);
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  max-width: 680px;
+  font-weight: 300;
+}
+
+.subtitle strong {
+  color: var(--color-off-white);
+  font-weight: 500;
+}
+
+.dossierCard {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 3.5rem 3rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  margin-bottom: 3.5rem;
+}
+
+.dossierHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.dossierTitleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.orderLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.orderId {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: var(--color-off-white);
+  font-weight: 600;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(109, 184, 138, 0.1);
+  border: 1px solid rgba(109, 184, 138, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-green-accent);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.dossierGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .dossierGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.dossierItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.itemKey {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.itemVal {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-off-white);
+  font-weight: 500;
+}
+
+.itemValGreen {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-green-accent);
+  font-weight: 500;
+}
+
+.itemSub {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.dossierActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.trackBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.15rem 2.25rem;
+  background: var(--color-off-white);
+  color: var(--color-black);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.trackBtn:hover {
+  background: var(--color-green-accent);
+  box-shadow: 0 10px 25px rgba(109, 184, 138, 0.3);
+}
+
+.printBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.15rem 1.75rem;
+  background: transparent;
+  color: var(--color-off-white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  transition: all 0.2s ease;
+}
+
+.printBtn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.bottomNav {
+  text-align: center;
+}
+
+.returnLink {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+  transition: color 0.2s ease;
+}
+
+.returnLink:hover {
+  color: var(--color-off-white);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 6rem 1.5rem 4rem;
+  }
+  .dossierCard {
+    padding: 2rem 1.5rem;
+  }
+  .trackBtn,
+  .printBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,348 @@
+.adminWrap {
+  display: flex;
+  min-height: 100vh;
+  background-color: #0c0c0c;
+  color: var(--color-off-white);
+  font-family: var(--font-sans);
+}
+
+.sidebar {
+  width: 280px;
+  background: #090909;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.sidebarTop {
+  padding: 2.5rem 2rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.brandTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--color-off-white);
+}
+
+.brandSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-green-accent);
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 2rem 1rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-grey);
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: left;
+}
+
+.navItem:hover {
+  color: var(--color-off-white);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.navActive {
+  color: var(--color-green-accent);
+  background: rgba(109, 184, 138, 0.08);
+  border: 1px solid rgba(109, 184, 138, 0.25);
+  font-weight: 600;
+}
+
+.sidebarBadge {
+  margin-left: auto;
+  font-size: 0.6rem;
+  padding: 0.15rem 0.45rem;
+  background: rgba(109, 184, 138, 0.15);
+  border: 1px solid rgba(109, 184, 138, 0.35);
+  color: var(--color-green-accent);
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.sidebarBottom {
+  padding: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.adminUser {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+  box-shadow: 0 0 8px var(--color-green-accent);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-off-white);
+}
+
+.userRole {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-grey);
+  letter-spacing: 0.1em;
+}
+
+.bottomBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.publicLink,
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-grey);
+  transition: color 0.2s ease;
+}
+
+.publicLink:hover,
+.logoutBtn:hover {
+  color: var(--color-off-white);
+}
+
+.logoutBtn:hover {
+  color: #ff7675;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: #090909;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hamburgerBtn {
+  display: none;
+  color: var(--color-off-white);
+}
+
+.headerTitleWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionCode {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.headerTitle {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-off-white);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.telemetryBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(109, 184, 138, 0.08);
+  border: 1px solid rgba(109, 184, 138, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-green-accent);
+}
+
+.pulseDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+  box-shadow: 0 0 8px var(--color-green-accent);
+}
+
+.bodyWrap {
+  padding: 3rem;
+  flex: 1;
+}
+
+/* Auth Gate Page */
+.gatePage {
+  min-height: 100vh;
+  background: #080808;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.gateCard {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4rem 3.5rem;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+}
+
+.gateTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.shieldIcon {
+  color: var(--color-green-accent);
+}
+
+.gateTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.gateHeading {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-off-white);
+  margin-bottom: 1.25rem;
+}
+
+.gateDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  margin-bottom: 2.5rem;
+}
+
+.gateActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.grantBtn {
+  padding: 1.15rem;
+  background: var(--color-off-white);
+  color: var(--color-black);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  transition: all 0.25s ease;
+}
+
+.grantBtn:hover {
+  background: var(--color-green-accent);
+}
+
+.loginBtn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-grey);
+  padding: 0.75rem;
+}
+
+.loginBtn:hover {
+  color: var(--color-off-white);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .hamburgerBtn {
+    display: block;
+  }
+
+  .topHeader {
+    padding: 1.5rem;
+  }
+
+  .bodyWrap {
+    padding: 1.5rem;
+  }
+}

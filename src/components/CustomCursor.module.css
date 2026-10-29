@@ -1,0 +1,79 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: normal;
+}
+
+/* Hide on touch devices */
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f0ede8;
+  will-change: transform;
+  transition: opacity 0.2s ease;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 237, 232, 0.4);
+  will-change: transform;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ringExpanded {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(240, 237, 232, 0.6);
+  background: rgba(240, 237, 232, 0.05);
+}
+
+.ringText {
+  width: 80px;
+  height: 80px;
+  border-color: rgba(109, 184, 138, 0.6);
+  background: rgba(109, 184, 138, 0.05);
+}
+
+.ringGreen {
+  border-color: rgba(109, 184, 138, 0.8);
+  background: rgba(109, 184, 138, 0.1);
+}
+
+.ringLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-green-accent);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ringText .ringLabel {
+  opacity: 1;
+}

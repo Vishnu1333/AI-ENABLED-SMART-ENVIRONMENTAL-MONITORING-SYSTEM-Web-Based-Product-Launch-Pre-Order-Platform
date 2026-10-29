@@ -1,0 +1,200 @@
+.section {
+  position: relative;
+  background-color: var(--color-off-black);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.pinWrap {
+  padding: 8rem 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1025px) {
+  .section {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .pinWrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 4rem;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+.header {
+  margin-bottom: 4rem;
+}
+
+.tagWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--color-green-accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-off-white);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--color-green-accent);
+}
+
+.cardsTrack {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+}
+
+@media (max-width: 1024px) {
+  .cardsTrack {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 2rem;
+  }
+}
+
+.stageCard {
+  width: 380px;
+  height: 480px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .stageCard {
+    width: 100%;
+    height: auto;
+    min-height: 360px;
+  }
+}
+
+.stageCard:hover {
+  background: #181818;
+  border-color: rgba(109, 184, 138, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 25px rgba(109, 184, 138, 0.1);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stageNum {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: -0.04em;
+  transition: color 0.3s ease;
+}
+
+.stageCard:hover .stageNum {
+  color: var(--color-green-accent);
+}
+
+.iconCircle {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  background: rgba(109, 184, 138, 0.08);
+  border: 1px solid rgba(109, 184, 138, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: var(--color-green-accent);
+}
+
+.cardCenter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stageSub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.stageTitle {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  letter-spacing: -0.02em;
+  color: var(--color-off-white);
+  line-height: 1;
+}
+
+.stageDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  font-weight: 300;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cardCode {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.cardArrow {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--color-green-accent);
+  transition: transform 0.3s ease;
+}
+
+.stageCard:hover .cardArrow {
+  transform: translateX(6px);
+}

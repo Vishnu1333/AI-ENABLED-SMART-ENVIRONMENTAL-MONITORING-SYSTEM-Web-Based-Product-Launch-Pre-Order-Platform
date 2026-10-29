@@ -1,0 +1,235 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-off-white);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.searchWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+.searchIcon {
+  color: var(--color-grey);
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-off-white);
+  outline: none;
+  min-width: 200px;
+}
+
+.filterWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.filterIcon {
+  color: var(--color-grey);
+}
+
+.select {
+  background: transparent;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-off-white);
+  outline: none;
+}
+
+.tableCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.85rem;
+}
+
+.clickableRow {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clickableRow:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.monoCell {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-off-white);
+  white-space: nowrap;
+}
+
+.idWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-green-accent);
+}
+
+.clientBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.clientName {
+  font-weight: 500;
+  color: var(--color-off-white);
+}
+
+.clientEmail {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-grey);
+}
+
+.qtyCell {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-off-white);
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(109, 184, 138, 0.08);
+  border: 1px solid rgba(109, 184, 138, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-green-accent);
+  white-space: nowrap;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.statusSelect {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-off-white);
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+.expandedRow td {
+  background: #090909;
+  padding: 1.5rem 2rem;
+}
+
+.drawer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+}
+
+.drawerItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.drawerLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-grey);
+}
+
+.drawerVal {
+  font-size: 0.8rem;
+  color: var(--color-off-white);
+}
+
+.drawerValGreen {
+  font-size: 0.8rem;
+  color: var(--color-green-accent);
+}
+
+.emptyCell {
+  text-align: center;
+  padding: 4rem !important;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-grey);
+}

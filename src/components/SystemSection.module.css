@@ -1,0 +1,329 @@
+.section {
+  position: relative;
+  padding: 10rem 2rem 8rem;
+  background-color: var(--color-black);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.techGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  max-width: 800px;
+  margin-bottom: 7rem;
+}
+
+.tagWrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--color-green-accent);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-off-white);
+  margin-bottom: 2rem;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--color-green-accent);
+}
+
+.subtext {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  font-weight: 300;
+}
+
+.pipelineWrap {
+  position: relative;
+  margin-bottom: 8rem;
+}
+
+.centerLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(109, 184, 138, 0.1), rgba(109, 184, 138, 0.6) 50%, rgba(109, 184, 138, 0.1));
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.movingPhoton {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 6px;
+  height: 40px;
+  background: var(--color-green-accent);
+  border-radius: 3px;
+  filter: blur(1px);
+  box-shadow: 0 0 15px var(--color-green-accent);
+  animation: photon-travel 4s linear infinite;
+}
+
+@keyframes photon-travel {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.nodesList {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.nodeRow {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  position: relative;
+}
+
+.nodeRowReverse {
+  direction: rtl;
+}
+
+.nodeRowReverse .card {
+  direction: ltr;
+}
+
+.connectorCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connectorNode {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #111;
+  border: 1px solid rgba(109, 184, 138, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(109, 184, 138, 0.2);
+  z-index: 3;
+}
+
+.nodeInnerDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-green-accent);
+}
+
+.card {
+  background: #121212;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 2.25rem;
+  transition: all 0.35s ease;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover {
+  border-color: rgba(109, 184, 138, 0.4);
+  background: #161616;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 25px rgba(109, 184, 138, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.iconCircle {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(109, 184, 138, 0.08);
+  border: 1px solid rgba(109, 184, 138, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  color: var(--color-green-accent);
+}
+
+.cardHeaderMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.stageNum {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-green-accent);
+}
+
+.stageSubtitle {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-grey);
+}
+
+.metricBadge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--color-off-white);
+}
+
+.stageTitle {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-off-white);
+  margin-bottom: 0.75rem;
+}
+
+.stageDesc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-grey);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.footerCode {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.statusLive {
+  color: var(--color-green-accent);
+}
+
+.statsBanner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 3rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .statsBanner {
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    align-items: center;
+    padding: 3.5rem 4rem;
+  }
+
+  .statDivider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.statVal {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--color-off-white);
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-grey);
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .centerLine {
+    left: 20px;
+  }
+
+  .nodeRow {
+    grid-template-columns: 40px 1fr;
+    gap: 1.5rem;
+    direction: ltr !important;
+  }
+
+  .connectorCenter {
+    grid-column: 1;
+  }
+
+  .card {
+    grid-column: 2;
+  }
+
+  .emptySpacer {
+    display: none;
+  }
+}

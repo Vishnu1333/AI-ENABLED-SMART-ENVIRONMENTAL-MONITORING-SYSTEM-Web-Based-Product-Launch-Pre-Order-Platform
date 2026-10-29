@@ -1,0 +1,333 @@
+/* ─────────────────────────────────────────────
+   Navbar.module.css — AERIS AI
+───────────────────────────────────────────── */
+
+/* ── Root nav ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  height: 72px;
+  display: flex;
+  align-items: center;
+  transition:
+    background 0.4s var(--ease-smooth),
+    border-color 0.4s var(--ease-smooth),
+    backdrop-filter 0.4s var(--ease-smooth);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ── Inner layout ── */
+.inner {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 4rem);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ── Wordmark ── */
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.wordmarkAeris {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-off-white);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.wordmarkAi {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-green-accent);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  align-self: center;
+  margin-top: 0.1em;
+}
+
+/* ── Centre nav links ── */
+.centreLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .centreLinks {
+    display: none;
+  }
+}
+
+.navLink {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45em;
+  text-decoration: none;
+  color: var(--color-light-grey);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.25s var(--ease-smooth);
+  padding-bottom: 4px;
+}
+
+.navLink:hover {
+  color: var(--color-off-white);
+}
+
+.navNum {
+  color: var(--color-green-accent);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.navLabel {
+  position: relative;
+}
+
+/* Hover underline */
+.navUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--color-green-accent);
+  transition: width 0.35s var(--ease-out-expo);
+}
+
+.navLink:hover .navUnderline {
+  width: 100%;
+}
+
+/* ── Right actions ── */
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.textBtn {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-light-grey);
+  transition: color 0.25s var(--ease-smooth);
+  cursor: none;
+}
+
+.textBtn:hover {
+  color: var(--color-off-white);
+}
+
+.preorderBtn {
+  color: var(--color-green-accent);
+  border: 1px solid rgba(109, 184, 138, 0.35);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition:
+    color 0.25s var(--ease-smooth),
+    background 0.25s var(--ease-smooth),
+    border-color 0.25s var(--ease-smooth);
+}
+
+.preorderBtn:hover {
+  background: var(--color-green-accent);
+  color: var(--color-black);
+  border-color: var(--color-green-accent);
+}
+
+.adminBtn {
+  color: var(--color-light-grey);
+}
+
+.adminBtn:hover {
+  color: var(--color-green-accent);
+}
+
+/* Hide admin & preorder on mobile (available in hamburger) */
+@media (max-width: 640px) {
+  .adminBtn,
+  .loginBtn {
+    display: none;
+  }
+  .preorderBtn {
+    display: none;
+  }
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: none;
+  padding: 4px;
+  width: 28px;
+  height: 28px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hLine {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--color-off-white);
+  border-radius: 2px;
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Desktop: hide hamburger */
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ── Mobile fullscreen menu ── */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  background: var(--color-black);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenuInner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: clamp(1.5rem, 6vw, 4rem);
+  padding-top: 80px;
+}
+
+.mobileClose {
+  position: absolute;
+  top: 1.5rem;
+  right: clamp(1.5rem, 6vw, 4rem);
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--color-grey);
+  background: none;
+  border: none;
+  cursor: none;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.mobileClose:hover {
+  color: var(--color-off-white);
+}
+
+.mobileLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vh, 1.2rem);
+}
+
+.mobileLinkItem {
+  overflow: hidden;
+  line-height: 1;
+  will-change: transform, opacity;
+}
+
+.mobileLink {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 7rem);
+  line-height: 1.05;
+  color: var(--color-off-white);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  letter-spacing: -0.02em;
+  transition: color 0.25s var(--ease-smooth);
+}
+
+.mobileLink:hover {
+  color: var(--color-green-accent);
+}
+
+.mobileLinkAccent {
+  color: var(--color-green-accent);
+}
+
+.mobileLinkNum {
+  font-family: var(--font-mono);
+  font-size: clamp(0.65rem, 1.5vw, 0.9rem);
+  color: var(--color-grey);
+  letter-spacing: 0.12em;
+  align-self: center;
+  transform: translateY(-0.15em);
+}
+
+.mobileFooter {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mobileFooterLabel {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-grey);
+}
+
+/* ── Mobile heights ── */
+@media (max-width: 767px) {
+  .navbar {
+    height: 60px;
+  }
+}
+
+/* Grid alignment for mobile (wordmark left, hamburger right) */
+@media (max-width: 899px) {
+  .inner {
+    grid-template-columns: 1fr auto;
+  }
+  /* centreLinks is already display:none */
+}

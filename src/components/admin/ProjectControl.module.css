@@ -1,0 +1,1536 @@
+.projectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  color: var(--color-off-white, #f0f0f0);
+  font-family: var(--font-body, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  padding-bottom: 4rem;
+}
+
+/* ── Top Header ── */
+.projectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md, 4px);
+  position: relative;
+  overflow: hidden;
+}
+
+.projectHeader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-green-accent, #6db88a);
+}
+
+.headerInfo {
+  max-width: 65%;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-light-grey, #999);
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.academicBadge {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  padding: 0.2rem 0.6rem;
+  background: rgba(109, 184, 138, 0.1);
+  border: 1px solid rgba(109, 184, 138, 0.3);
+  color: var(--color-green-accent, #6db88a);
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.liveBadge {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  padding: 0.2rem 0.6rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+.mainTitle {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+}
+
+.subTitle {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--color-light-grey, #888);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.headerMetaBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 280px;
+  background: #0c0c0c;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+.metaKey {
+  color: #777;
+  letter-spacing: 0.1em;
+}
+
+.metaValGreen {
+  color: var(--color-green-accent, #6db88a);
+  font-weight: 600;
+}
+
+.metaValHighlight {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.metaVal {
+  color: #aaa;
+  font-size: 0.7rem;
+}
+
+/* ── Sticky Section Navigator ── */
+.navBarSticky {
+  position: sticky;
+  top: 70px;
+  z-index: 40;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navScroller {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.2rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.navPill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #888;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navPill:hover {
+  background: #202020;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.navPillActive {
+  background: rgba(109, 184, 138, 0.12);
+  border-color: var(--color-green-accent, #6db88a);
+  color: var(--color-green-accent, #6db88a);
+  font-weight: 600;
+}
+
+.pillNum {
+  opacity: 0.6;
+}
+
+/* ── Section Block Container ── */
+.sectionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.8rem;
+}
+
+.sectionNum {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--color-green-accent, #6db88a);
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.cardHeader {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-green-accent, #6db88a);
+  margin: 0 0 0.8rem 0;
+}
+
+.cardSubText {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: #888;
+  margin: -0.4rem 0 1rem 0;
+}
+
+/* ── 01. Overview Styles ── */
+.overviewIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.leadText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin: 0;
+}
+
+.disclaimerBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  background: rgba(229, 192, 123, 0.06);
+  border: 1px solid rgba(229, 192, 123, 0.25);
+  padding: 1rem 1.2rem;
+  border-radius: 4px;
+  color: #e5c07b;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.kpiCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.4rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+  transition: border-color 0.2s ease;
+}
+
+.kpiCard:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.kpiTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.kpiLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.kpiBadge {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+
+.kpiValue {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+
+.kpiSub {
+  font-size: 0.75rem;
+  color: #777;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+/* ── 02. Charter Two-Column ── */
+.twoColGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .twoColGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.infoCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.6rem;
+  border-radius: 4px;
+}
+
+.cardBodyText {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #bbb;
+  margin: 0;
+}
+
+.roleList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.roleItem {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.roleItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.roleTitle {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: var(--color-green-accent, #6db88a);
+  text-transform: uppercase;
+}
+
+.roleName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin: 0.2rem 0;
+}
+
+.roleDesc {
+  font-size: 0.78rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+.constraintList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.constraintItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--color-green-accent, #6db88a);
+}
+
+.constraintTag {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.constraintDetail {
+  font-size: 0.78rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+.assumptionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.assumptionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: #aaa;
+  line-height: 1.5;
+}
+
+.bulletIcon {
+  color: var(--color-green-accent, #6db88a);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+/* ── Tables & Resposiveness ── */
+.tableResponsive {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  background: #111111;
+}
+
+.dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.dataTable th {
+  background: #0d0d0d;
+  color: #777;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dataTable td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: top;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.dataTable tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.codeCell {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 700;
+  color: var(--color-green-accent, #6db88a);
+  font-size: 0.75rem;
+}
+
+.cellHeading {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.targetCell {
+  color: #bbb;
+  font-size: 0.78rem;
+}
+
+.verificationCell {
+  color: #888;
+  font-size: 0.75rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+.cellHighlight {
+  color: var(--color-green-accent, #6db88a);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+}
+
+.statusNote {
+  font-size: 0.7rem;
+  color: #777;
+  margin-top: 0.4rem;
+  line-height: 1.35;
+}
+
+.calcCell {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.groupTag {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  color: #777;
+  letter-spacing: 0.1em;
+  margin-top: 0.2rem;
+}
+
+/* ── Badges & Status Pills ── */
+.statusPill {
+  display: inline-block;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.55rem;
+  border-radius: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pill_green,
+.badge_green {
+  background: rgba(109, 184, 138, 0.12);
+  border: 1px solid rgba(109, 184, 138, 0.35);
+  color: #6db88a;
+}
+
+.pill_yellow,
+.badge_yellow {
+  background: rgba(229, 192, 123, 0.12);
+  border: 1px solid rgba(229, 192, 123, 0.35);
+  color: #e5c07b;
+}
+
+.pill_orange,
+.badge_orange {
+  background: rgba(224, 108, 117, 0.15);
+  border: 1px solid rgba(224, 108, 117, 0.4);
+  color: #e06c75;
+}
+
+.pill_red,
+.badge_red {
+  background: rgba(255, 77, 79, 0.15);
+  border: 1px solid rgba(255, 77, 79, 0.45);
+  color: #ff4d4f;
+}
+
+.pill_grey,
+.badge_grey {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #888;
+}
+
+/* ── 04. Scope Cards ── */
+.scopeCard {
+  background: #111111;
+  border-radius: 4px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.scopeIn {
+  border: 1px solid rgba(109, 184, 138, 0.25);
+}
+
+.scopeOut {
+  border: 1px solid rgba(224, 108, 117, 0.25);
+}
+
+.scopeHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.8rem;
+}
+
+.scopeHeader h3 {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.82rem;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.scopeIconIn {
+  color: var(--color-green-accent, #6db88a);
+}
+
+.scopeIconOut {
+  color: #e06c75;
+}
+
+.scopeList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-height: 540px;
+  overflow-y: auto;
+  padding-right: 0.4rem;
+}
+
+.scopeItem {
+  display: flex;
+  gap: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+}
+
+.scopeItemNum {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #666;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.scopeItemContent strong {
+  display: block;
+  font-size: 0.82rem;
+  color: #fff;
+  margin-bottom: 0.15rem;
+}
+
+.scopeItemContent p {
+  font-size: 0.74rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── 05. Deliverables Grid ── */
+.deliverablesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.deliverableCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.delivTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delivCode {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-green-accent, #6db88a);
+}
+
+.delivName {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.delivDesc {
+  font-size: 0.78rem;
+  color: #999;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.delivEvidence {
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+}
+
+.delivEvidenceLabel {
+  color: #666;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.delivEvidenceVal {
+  color: var(--color-green-accent, #6db88a);
+}
+
+/* ── 06. Stakeholder Matrix ── */
+.matrixContainer {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.matrixTitle {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-green-accent, #6db88a);
+  margin-bottom: 1rem;
+}
+
+.matrixGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .matrixGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.quadrant {
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 1.2rem;
+}
+
+.quadrantKey {
+  border-color: rgba(109, 184, 138, 0.4);
+  background: rgba(109, 184, 138, 0.03);
+}
+
+.quadrantHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.quadrantCoord {
+  font-size: 0.62rem;
+  color: #777;
+  letter-spacing: 0.1em;
+}
+
+.quadrantList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.quadrantList li {
+  font-size: 0.75rem;
+  color: #aaa;
+  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: #777;
+  margin-right: 0.4rem;
+}
+
+.filterBtn {
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #888;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterBtn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.filterBtnActive {
+  background: rgba(109, 184, 138, 0.15);
+  border-color: var(--color-green-accent, #6db88a);
+  color: var(--color-green-accent, #6db88a);
+  font-weight: 600;
+}
+
+/* ── 07. Budget ── */
+.budgetKpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.budgetCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.budgetCardLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #888;
+}
+
+.budgetCardVal {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.budgetCardValGreen {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-green-accent, #6db88a);
+}
+
+.budgetCardSub {
+  font-size: 0.7rem;
+  color: #666;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+.budgetVisuals {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.6rem;
+  border-radius: 4px;
+}
+
+.barChartWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.barItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.barInfo {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+}
+
+.barName {
+  color: #ddd;
+}
+
+.barVal {
+  color: var(--color-green-accent, #6db88a);
+  font-weight: 600;
+}
+
+.barTrack {
+  width: 100%;
+  height: 8px;
+  background: #1c1c1c;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, #4d8262, var(--color-green-accent, #6db88a));
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+.categoryDetailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.catBox {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.catTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.4rem;
+}
+
+.catTitle {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.catTotal {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-green-accent, #6db88a);
+}
+
+.catDesc {
+  font-size: 0.72rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.subItemList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+
+.subItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  padding: 0.3rem 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 2px;
+}
+
+.subName {
+  color: #aaa;
+}
+
+.subAmount {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  color: #ddd;
+  font-weight: 600;
+}
+
+/* ── 08. Risk Heatmap ── */
+.riskFormulaCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.2rem 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.formulaLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.formulaLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: #777;
+}
+
+.formulaCode {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.88rem;
+  color: #fff;
+}
+
+.scaleBadges {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.scalePill {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.heatmapCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 4px;
+}
+
+.heatmapTitle {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-green-accent, #6db88a);
+  margin-bottom: 1.2rem;
+}
+
+.heatmapWrap {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+
+.yAxisLabel {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #777;
+}
+
+.heatmapGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 480px;
+}
+
+.heatmapRow {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.axisCoord {
+  width: 40px;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  color: #777;
+  text-align: right;
+  padding-right: 6px;
+}
+
+.heatmapCell {
+  flex: 1;
+  height: 60px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4px 6px;
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.heatmapCell:hover {
+  transform: scale(1.04);
+  z-index: 2;
+}
+
+.cellScore {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.cellRisks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  justify-content: flex-end;
+}
+
+.riskMarker {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.6rem;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cell_green {
+  background: rgba(109, 184, 138, 0.2);
+  border: 1px solid rgba(109, 184, 138, 0.4);
+  color: #6db88a;
+}
+
+.cell_yellow {
+  background: rgba(229, 192, 123, 0.2);
+  border: 1px solid rgba(229, 192, 123, 0.4);
+  color: #e5c07b;
+}
+
+.cell_orange {
+  background: rgba(224, 108, 117, 0.25);
+  border: 1px solid rgba(224, 108, 117, 0.5);
+  color: #e06c75;
+}
+
+.cell_red {
+  background: rgba(255, 77, 79, 0.35);
+  border: 1px solid rgba(255, 77, 79, 0.6);
+  color: #ff4d4f;
+}
+
+.xAxisRow {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.xAxisLabel {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  color: #777;
+}
+
+.xAxisTitle {
+  text-align: center;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #777;
+  margin-top: 6px;
+}
+
+/* ── 09. WBS Grid ── */
+.wbsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.2rem;
+}
+
+.wbsCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.wbsTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wbsCode {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-green-accent, #6db88a);
+}
+
+.wbsDeliverable {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  color: #888;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+}
+
+.wbsName {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.wbsTaskList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+.wbsTaskItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+.wbsBullet {
+  color: var(--color-green-accent, #6db88a);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* ── 10. Two Lifecycles Banner ── */
+.twoLifecyclesBanner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .twoLifecyclesBanner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lifecycleCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lifecycleTop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.lifecycleTop h3 {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.1rem;
+  margin: 0;
+  color: #fff;
+}
+
+.lifecycleDesc {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.stageStepper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--color-green-accent, #6db88a);
+}
+
+.stepNum {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.62rem;
+  color: #777;
+  letter-spacing: 0.1em;
+}
+
+.stepName {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  color: #fff;
+}
+
+.stepDesc {
+  font-size: 0.72rem;
+  color: #888;
+  line-height: 1.35;
+}
+
+/* ── 11. QA & Security ── */
+.qaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.qaCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.qaTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.6rem;
+}
+
+.qaCategory {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #fff;
+}
+
+.qaBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.qaSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.qaLabel {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.qaText {
+  font-size: 0.78rem;
+  color: #ccc;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.qaNotes {
+  font-size: 0.72rem;
+  color: #888;
+  line-height: 1.4;
+  margin: 0;
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+}
+
+/* ── 12. Deployment ── */
+.deployAlert {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(229, 192, 123, 0.06);
+  border: 1px solid rgba(229, 192, 123, 0.3);
+  padding: 1.2rem 1.4rem;
+  border-radius: 4px;
+  color: #e5c07b;
+}
+
+.deployAlert strong {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #fff;
+}
+
+.deployAlert p {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0;
+  color: #ddd;
+}
+
+.deployGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.deployCard {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.deployTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deployParam {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.deployDetail {
+  font-size: 0.76rem;
+  color: #999;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ── 13. Handover ── */
+.handoverList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.handoverItem {
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .handoverItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.handoverLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.handoverIndex {
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: var(--color-green-accent, #6db88a);
+  font-weight: 700;
+  padding-top: 0.15rem;
+}
+
+.handoverItemTitle {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  color: #fff;
+}
+
+.handoverDesc {
+  font-size: 0.78rem;
+  color: #888;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.handoverRight {
+  flex-shrink: 0;
+}
